@@ -1,17 +1,36 @@
 import React, { useState } from 'react';
-import { SiReact, SiNodedotjs, SiJavascript, SiTailwindcss, SiMongodb, SiHtml5, SiCss3, SiRedux } from 'react-icons/si';
+import { SiReact, SiNodedotjs, SiJavascript, SiBootstrap, SiMongodb, SiHtml5, SiCss3, SiRedux, SiGit, SiGithub, SiRender, SiNetlify, SiPostman, SiNpm } from 'react-icons/si';
 import { MdEmail, MdLocationOn } from 'react-icons/md';
 
-const skillList = [
-  { name: 'React', icon: <SiReact color="#61dafb" size={56} /> },
-  { name: 'Node.js', icon: <SiNodedotjs color="#339933" size={56} /> },
-  { name: 'JavaScript', icon: <SiJavascript color="#f7df1e" size={56} /> },
-  { name: 'Tailwind CSS', icon: <SiTailwindcss color="#38bdf8" size={56} /> },
-  { name: 'MongoDB', icon: <SiMongodb color="#47a248" size={56} /> },
-  { name: 'HTML5', icon: <SiHtml5 color="#e44d26" size={56} /> },
-  { name: 'CSS3', icon: <SiCss3 color="#2965f1" size={56} /> },
-  { name: 'Redux', icon: <SiRedux color="#764abc" size={56} /> },
-];
+const skillCategories = {
+  Frontend: [
+    { name: 'React', icon: <SiReact color="#61dafb" size={56} /> },
+    { name: 'JavaScript', icon: <SiJavascript color="#f7df1e" size={56} /> },
+    { name: 'HTML5', icon: <SiHtml5 color="#e44d26" size={56} /> },
+    { name: 'CSS3', icon: <SiCss3 color="#2965f1" size={56} /> },
+    { name: 'Bootstrap', icon: <SiBootstrap color="#7952b3" size={56} /> },
+    { name: 'Redux', icon: <SiRedux color="#764abc" size={56} /> },
+  ],
+  Backend: [
+    { name: 'Node.js', icon: <SiNodedotjs color="#339933" size={56} /> },
+    { name: 'MongoDB', icon: <SiMongodb color="#47a248" size={56} /> },
+  ],
+  Tools: [
+    { name: 'Git', icon: <SiGit color="#f05032" size={56} /> },
+    { name: 'GitHub', icon: <SiGithub color="#181717" size={56} /> },
+    { name: 'VS Code', icon: (
+      <img 
+        src="https://code.visualstudio.com/favicon.ico" 
+        alt="VS Code" 
+        style={{ width: 56, height: 56, objectFit: 'contain', display: 'block', margin: '0 auto' }}
+      />
+    ) },
+    { name: 'Render', icon: <SiRender color="#46e3b7" size={56} /> },
+    { name: 'Netlify', icon: <SiNetlify color="#00c7b7" size={56} /> },
+    { name: 'Postman', icon: <SiPostman color="#ff6c37" size={56} /> },
+    { name: 'NPM', icon: <SiNpm color="#cb3837" size={56} /> },
+  ],
+};
 
 const projects = [
   
@@ -109,12 +128,17 @@ function Portfolio() {
             <img src="/profile.jpg" alt="srikiruba" className="rounded-circle border border-primary" style={{width:128, height:128,objectFit:'cover',borderWidth: '4px'}} />
             <h1 className="fw-bold mt-3" style={{fontSize: '3.2rem'}}>I'm <span className="text-primary">srikiruba</span></h1>
             <p className="text-primary fw-semibold mb-3" style={{fontSize:'1.25rem'}}>Full-Stack Developer</p>
-            <p className={`mx-auto mb-4 ${darkMode ? 'text-light' : 'text-muted'}`} style={{ maxWidth: 760, fontSize:'1.05rem' }}>
-              Passionate web developer focused on building innovative and scalable applications. I specialize in crafting clean, efficient, and maintainable code using modern web technologies.
+            <p className={`mx-auto mb-4 ${darkMode ? 'text-light' : 'text-muted'}`} style={{ maxWidth: 760, fontSize:'1.05rem', lineHeight: '1.8' }}>
+              Building innovative web solutions with modern technologies.<br />
+              Transforming ideas into scalable, user-friendly applications.
             </p>
             <div className="d-flex flex-wrap justify-content-center gap-3 mb-3">
-              <a href="/srikiruba.pdf" download className="btn btn-primary px-4"><i className="bi bi-download me-1"></i>Download Resume</a>
-              <a href="#contact" className="btn btn-outline-primary px-4">Contact</a>
+              <a href="/srikiruba.pdf" download className="btn btn-primary" style={{padding: '0.625rem 1.5rem', fontSize: '1rem', fontWeight: 500}}>
+                <i className="bi bi-download me-1"></i>Download Resume
+              </a>
+              <a href="#contact" className="btn btn-outline-primary" style={{padding: '0.625rem 1.5rem', fontSize: '1rem', fontWeight: 500}}>
+                Contact
+              </a>
             </div>
             <div className="d-flex justify-content-center gap-4 mt-4">
               <a href="https://github.com/kirubasar" target="_blank" rel="noopener noreferrer" className="fs-4 text-decoration-none text-dark-emphasis"><i className="bi bi-github me-1"></i></a>
@@ -158,7 +182,7 @@ function Portfolio() {
                     textAlign: 'left'
                   }}>
                     <span style={{color:'#2769d9', fontWeight: 700, fontSize:'1.08rem'}}>Frontend Focus</span><br/>
-                    <span style={{color: darkMode ? '#dee2f3':'#49505c'}}>JavaScript, React.js, Redux, HTML, CSS, Tailwind CSS, Bootstrap</span>
+                    <span style={{color: darkMode ? '#dee2f3':'#49505c'}}>JavaScript, React.js, Redux, HTML, CSS, Bootstrap</span>
                   </div>
                 </div>
                 <div className="col-md-6 col-12">
@@ -186,42 +210,49 @@ function Portfolio() {
       <section id="skills" className="py-5">
         <div className="container">
           <h2 className="fw-bold text-center mb-4" style={{letterSpacing: '.01em'}}>My <span className="text-primary">Skills</span></h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-            <p className={`text-lg ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+          <div className="mx-auto mb-5" style={{width: '80px', height: '4px', background: 'linear-gradient(to right, #0d6efd, #6f42c1)', borderRadius: '2px'}}></div>
+            <p className={`text-center mb-5 ${darkMode ? "text-light" : "text-muted"}`} style={{fontSize: '1.05rem'}}>
               Technologies I use to build modern and scalable web applications.
             </p>
          
-          <div className="row g-4 justify-content-center">
-            {skillList.map((skill) => (
-              <div className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" key={skill.name}>
-                <div
-                  className="card mx-auto w-100 h-100 text-center p-4"
-                  style={{
-                    background: '#fff',
-                    borderRadius: 20,
-                    border: '1.5px solid #f3f3f3',
-                    color: '#222',
-                    boxShadow: '0 2px 16px rgba(46, 51, 56, 0.07)',
-                    transition: 'transform .2s, box-shadow .2s, border .2s',
-                    cursor: 'pointer',
-                  }}
-                  onMouseOver={e => {
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(13, 110, 253, 0.10)';
-                    e.currentTarget.style.border = '1.5px solid #0d6efd';
-                    e.currentTarget.style.transform = 'translateY(-6px) scale(1.03)';
-                  }}
-                  onMouseOut={e => {
-                    e.currentTarget.style.boxShadow = '0 2px 16px rgba(46, 51, 56, 0.07)';
-                    e.currentTarget.style.border = '1.5px solid #f3f3f3';
-                    e.currentTarget.style.transform = '';
-                  }}
-                >
-                  <div className="mb-3">{skill.icon}</div>
-                  <div className="fw-bold fs-5" style={{ color: "#23272F" }}>{skill.name}</div>
-                </div>
+          {Object.entries(skillCategories).map(([category, skills]) => (
+            <div key={category} className="mb-5">
+              <h3 className={`fw-bold mb-4 text-center ${darkMode ? 'text-white' : 'text-dark'}`} style={{fontSize: '1.5rem'}}>
+                {category}
+              </h3>
+              <div className="row g-4 justify-content-center">
+                {skills.map((skill) => (
+                  <div className="col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch" key={skill.name}>
+                    <div
+                      className="card mx-auto w-100 h-100 text-center p-4"
+                      style={{
+                        background: darkMode ? '#23272F' : '#fff',
+                        borderRadius: 20,
+                        border: darkMode ? '1.5px solid #3a3f47' : '1.5px solid #f3f3f3',
+                        color: darkMode ? '#fff' : '#222',
+                        boxShadow: darkMode ? '0 2px 16px rgba(0, 0, 0, 0.3)' : '0 2px 16px rgba(46, 51, 56, 0.07)',
+                        transition: 'transform .2s, box-shadow .2s, border .2s',
+                        cursor: 'pointer',
+                      }}
+                      onMouseOver={e => {
+                        e.currentTarget.style.boxShadow = '0 8px 24px rgba(13, 110, 253, 0.10)';
+                        e.currentTarget.style.border = '1.5px solid #0d6efd';
+                        e.currentTarget.style.transform = 'translateY(-6px) scale(1.03)';
+                      }}
+                      onMouseOut={e => {
+                        e.currentTarget.style.boxShadow = darkMode ? '0 2px 16px rgba(0, 0, 0, 0.3)' : '0 2px 16px rgba(46, 51, 56, 0.07)';
+                        e.currentTarget.style.border = darkMode ? '1.5px solid #3a3f47' : '1.5px solid #f3f3f3';
+                        e.currentTarget.style.transform = '';
+                      }}
+                    >
+                      <div className="mb-3">{skill.icon}</div>
+                      <div className="fw-bold fs-5" style={{ color: darkMode ? "#fff" : "#23272F" }}>{skill.name}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -229,8 +260,8 @@ function Portfolio() {
       <section id="projects" className={`section-block pb-5${darkMode ? ' dark' : ''}`}>
         <div className="container">
           <h2 className="fw-bold text-center mb-4" style={{letterSpacing: '.01em'}}>My <span className="text-primary">Projects</span></h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-            <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <div className="mx-auto mb-5" style={{width: '80px', height: '4px', background: 'linear-gradient(to right, #0d6efd, #6f42c1)', borderRadius: '2px'}}></div>
+            <p className={`text-center mb-4 ${darkMode ? 'text-light' : 'text-muted'}`} style={{fontSize: '1.05rem'}}>
               Here are some of my recent projects showcasing my skills and expertise.
             </p>
           <div className="row g-4">
@@ -259,20 +290,19 @@ function Portfolio() {
                   <div className="card-body d-flex flex-column align-items-center text-center px-4 py-3">
                     <h5 className="fw-bold mb-2 card-title">{p.title}</h5>
                     <p className={`card-text mb-2 ${darkMode ? 'text-light' : 'text-secondary'}`} style={{fontSize:'1rem'}}>{p.desc}</p>
-                    <div className="flex-wrap mb-2 d-flex gap-2 justify-content-center">
+                    <div className="flex-wrap mb-3 d-flex gap-2 justify-content-center">
                       {p.tech && p.tech.map((tech) => (
                         <span
                           key={tech}
                           style={{
                             display: 'inline-block',
-                            background: '#fff',
-                            color: '#23272F',
-                            border: '1.5px solid #E4E9F0',
+                            background: darkMode ? '#23272F' : '#fff',
+                            color: darkMode ? '#dee2f3' : '#23272F',
+                            border: darkMode ? '1.5px solid #3a3f47' : '1.5px solid #E4E9F0',
                             borderRadius: 18,
                             padding: '0.6em 1.1em',
                             fontWeight: 500,
-                            fontSize: '1em',
-                            margin: '0 0.3em 0.3em 0',
+                            fontSize: '0.9em',
                             transition: 'border-color 0.2s, box-shadow 0.2s',
                             cursor: 'default'
                           }}
@@ -281,7 +311,7 @@ function Portfolio() {
                             e.currentTarget.style.boxShadow = '0 4px 16px rgba(13,110,253,.14)';
                           }}
                           onMouseOut={e => {
-                            e.currentTarget.style.border = '1.5px solid #E4E9F0';
+                            e.currentTarget.style.border = darkMode ? '1.5px solid #3a3f47' : '1.5px solid #E4E9F0';
                             e.currentTarget.style.boxShadow = 'none';
                           }}
                         >
@@ -289,18 +319,16 @@ function Portfolio() {
                         </span>
                       ))}
                     </div>
-                    <div className="d-flex gap-2 mt-auto mb-0 pt-2 justify-content-center">
-                      {p.links && p.links.frontend && (
-                        <a href={p.links.frontend} target="_blank" rel="noreferrer" className="btn btn-outline-dark btn-sm">Frontend Code</a>
-                      )}
-                      {p.links && p.links.backend && (
-                        <a href={p.links.backend} target="_blank" rel="noreferrer" className="btn btn-outline-dark btn-sm">Backend Code</a>
-                      )}
-                      {!p.links?.frontend && !p.links?.backend && p.links?.code && (
-                        <a href={p.links.code} target="_blank" rel="noreferrer" className="btn btn-outline-dark btn-sm">Code</a>
-                      )}
+                    <div className="d-flex gap-3 mt-auto mb-0 pt-2 justify-content-center">
                       {p.links && p.links.live && (
-                        <a href={p.links.live} target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">Live</a>
+                        <a href={p.links.live} target="_blank" rel="noreferrer" className="btn btn-primary" style={{padding: '0.5rem 1.25rem', fontSize: '0.95rem', fontWeight: 500}}>
+                          <i className="bi bi-box-arrow-up-right me-1"></i>Live Demo
+                        </a>
+                      )}
+                      {(p.links?.frontend || p.links?.backend || p.links?.code) && (
+                        <a href={p.links.frontend || p.links.backend || p.links.code} target="_blank" rel="noreferrer" className="btn btn-outline-primary" style={{padding: '0.5rem 1.25rem', fontSize: '0.95rem', fontWeight: 500}}>
+                          <i className="bi bi-github me-1"></i>GitHub
+                        </a>
                       )}
                     </div>
                   </div>
@@ -315,8 +343,8 @@ function Portfolio() {
       <section id="contact" className="py-5">
         <div className="container">
           <h2 className="fw-bold text-center mb-4" style={{letterSpacing: '.01em'}}>Get In <span className="text-primary">Touch</span></h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6"></div>
-            <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          <div className="mx-auto mb-5" style={{width: '80px', height: '4px', background: 'linear-gradient(to right, #0d6efd, #6f42c1)', borderRadius: '2px'}}></div>
+            <p className={`text-center mb-4 ${darkMode ? 'text-light' : 'text-muted'}`} style={{fontSize: '1.05rem'}}>
               Feel free to reach out for collaborations or just a friendly hello.
             </p>
           <div className="row g-4 justify-content-center">
@@ -340,7 +368,7 @@ function Portfolio() {
                   <textarea rows="5" className="form-control" placeholder="Your Message"></textarea>
                 </div>
                 <div className="col-12 d-grid">
-                  <button type="button" className="btn btn-primary" onClick={handleSendMessage}>
+                  <button type="button" className="btn btn-primary" onClick={handleSendMessage} style={{padding: '0.625rem 1.5rem', fontSize: '1rem', fontWeight: 500}}>
                     Send Message
                   </button>
                 </div>
