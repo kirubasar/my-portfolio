@@ -46,33 +46,25 @@ const projects = [
     }
   },
   {
-    title: 'Weather App',
-    desc: 'Weather dashboard showing conditions by city and country.',
-    tech: ['HTML', 'CSS', 'Javascript'],
-    image: '/weather.png',
+    title: 'Todo App',
+    desc: 'A simple app to add, edit, and track daily tasks.',
+    image: '/todo.png',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB','Bootstrap'],
     links: {
-      code: 'https://github.com/kirubasar/Task-11.git',
-      live: 'https://restweather.netlify.app/'
+      frontend: 'https://github.com/kirubasar/todo-front.git',
+      backend: 'https://github.com/kirubasar/todo-back.git',
+      live: 'https://todofrnt.netlify.app/'
     }
   },
   {
-    title: 'Setup Course Navigation with React Router',
-    desc: 'Create a React web app using React Router DOM that includes navigation links for All pages.',
-    tech: ['React', 'Bootstrap'],
-    image: '/route.png',
-    links: {
-      code: 'https://github.com/kirubasar/React-Task04.git',
-      live: 'https://react-router-dompage.netlify.app/'
-    }
-  },
-  {
-    title: 'Zen Class Project',
-    desc: 'A collection of exercises and mini-apps built during Zen Class.',
-    tech: ['MongoDB'],
+    title: 'Student Management System',
+    desc: 'An app to manage student details and their records.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB','Bootstrap'],
     image: '/zen.jpg',
     links: {
-      code: 'https://github.com/kirubasar/MongoDB-Task02.git',
-      live: 'https://docs.google.com/document/d/1R_nDYTSm2ZcBNS5FLq8R_QpRaA_qK043CxVcptDc-1Q/edit?tab=t.0'
+      frontend: 'https://github.com/kirubasar/std-frontend.git',
+      backend: 'https://github.com/kirubasar/std-backend.git',
+      live: 'https://std-front.netlify.app/'
     }
   }
 
