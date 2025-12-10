@@ -313,13 +313,24 @@ function Portfolio() {
                     </div>
                     <div className="d-flex gap-3 mt-auto mb-0 pt-2 justify-content-center">
                       {p.links && p.links.live && (
-                        <a href={p.links.live} target="_blank" rel="noreferrer" className="btn btn-primary" style={{padding: '0.5rem 1.25rem', fontSize: '0.95rem', fontWeight: 500}}>
+                        <a href={p.links.live} target="_blank" rel="noreferrer" className="btn btn-primary" style={{height: '45px',width: '150px',display: 'flex',
+                          alignItems: 'center',justifyContent: 'center',fontSize: '15px',fontWeight: 500,borderRadius: '10px',borderWidth: '2px'}}>
                           <i className="bi bi-box-arrow-up-right me-1"></i>Live Demo
                         </a>
                       )}
-                      {(p.links?.frontend || p.links?.backend || p.links?.code) && (
-                        <a href={p.links.frontend || p.links.backend || p.links.code} target="_blank" rel="noreferrer" className="btn btn-outline-primary" style={{padding: '0.5rem 1.25rem', fontSize: '0.95rem', fontWeight: 500}}>
-                          <i className="bi bi-github me-1"></i>GitHub
+                      {p.links?.frontend && (
+                        <a href={p.links.frontend} target="_blank" rel="noreferrer" className="btn btn-outline-primary"
+                         style={{height: '45px',width: '90px',display: 'flex',alignItems: 'center',justifyContent: 'center',fontSize: '15px',
+                          fontWeight: 500,borderRadius: '10px',borderWidth: '2px'}}>
+                          Frontend 
+                        </a>
+                      )}
+                      {p.links?.backend && (
+                        <a href={p.links.backend} target="_blank" rel="noreferrer" className="btn btn-outline-primary"
+                         style={{height: '45px',width: '90px',display: 'flex',alignItems: 'center',justifyContent: 'center',fontSize: '15px',
+                          fontWeight: 500,borderRadius: '10px',borderWidth: '2px'}}
+                        >
+                          Backend
                         </a>
                       )}
                     </div>
